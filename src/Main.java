@@ -4,15 +4,24 @@ import java.util.stream.Collectors;
 public class Main {
 
     public static void main(String[] args) {
-        List<String> movieList = List.ofl("Avengers", "The day of tomorrow", "Shrek");
+        List<String> movieList = List.of("Avengers", "The day of tomorrow", "Shrek");
 
-        stringsToUpperCase(movieList);
+        List<String> toUpperCase = stringsToUpperCase(movieList);
 
         toUpperCase.forEach(System.out::println);
+
+        List<String> toLowerCase = stringsToLowerCase(movieList);
+        toLowerCase.forEach(System.out::println);
+
     }
     private static List<String> stringsToUpperCase(List<String> movieList)  {
         return movieList.stream()
                 .map(String::toUpperCase)
+                .collect(Collectors.toList());
+    }
+    private static List<String> stringsToLowerCase(List<String> movieList) {
+        return movieList.stream()
+                .map(String::toLowerCase)
                 .collect(Collectors.toList());
     }
 }
