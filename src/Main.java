@@ -19,7 +19,7 @@ public class Main {
                 .map(String::toUpperCase)
                 .collect(Collectors.toList());
     }
-    private static List<String> StringsToLowerCase(List<String> movieList) {
+    private static List<String> stringsToLowerCase(List<String> movieList) {
         return movieList.stream()
                 .map(String::toLowerCase)
                 .collect(Collectors.toList());
